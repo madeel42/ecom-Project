@@ -1,0 +1,67 @@
+.ant-modal-mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.04);
+    filter: alpha(opacity=50);
+}
+/* .ant-modal-body {
+    padding: 16px;
+    height: 69vh;
+    font-size: 14px;
+    line-height: 1.5715;
+    word-wrap: break-word;
+}
+.ant-modal {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    -webkit-font-feature-settings: 'tnum';
+    font-feature-settings: 'tnum', "tnum";
+    position: relative;
+    top: 37px;
+    width: auto;
+    margin: 0 auto;
+    padding-bottom: 24px;
+    pointer-events: none;
+} */
+.ant-modal-close-x {
+    display: block;
+    width: 41px;
+    height: 25px;
+    /* background: azure; */
+    font-size: 16px;
+    font-style: normal;
+    line-height: 23px;
+    text-align: center;
+    text-transform: none;
+    text-rendering: auto;
+}
+@media (max-width: 600px){
+    .ant-modal {
+        
+            max-width: calc(65vw - 16px);
+            margin: 8px auto;
+        /* max-width: 85% !important;
+        margin: 8px auto !important; */
+    }
+    }
+    @media (max-width: 767px){
+        .ant-modal {
+            
+                max-width: calc(76vw - 16px);
+                margin: 8px auto;
+            /* max-width: 85% !important;
+            margin: 8px auto !important; */
+        }
+        }

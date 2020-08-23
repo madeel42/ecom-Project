@@ -1,0 +1,26 @@
+.mainPicture{
+    width: 346px;
+    height: 40vh;
+    background: aqua;
+}
+.arrow {
+    position: absolute;
+    top: 50%;
+  }
+  
+  .right {
+    right: 0;
+  }
+  
+  .left {
+    left: 0;
+  }
+@media (max-width: 767px){
+    .mainPicture{ width: 342px;
+    height: 40vh;
+    padding-right: 126px;
+    background: aqua;
+}
+
+
+}

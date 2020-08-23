@@ -1,0 +1,119 @@
+.ant-tabs {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    -webkit-font-feature-settings: 'tnum';
+    font-feature-settings: 'tnum', "tnum";
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow: hidden;
+}
+.ant-tabs-top > .ant-tabs-nav::before, .ant-tabs-bottom > .ant-tabs-nav::before, .ant-tabs-top > div > .ant-tabs-nav::before, .ant-tabs-bottom > div > .ant-tabs-nav::before {
+    position: absolute;
+    right: 0;
+    left: 0;
+    border-bottom: none !important;
+    content: '';
+}
+.react-multi-carousel-dot-list {
+  position: absolute;
+  bottom: 11px;
+  display: flex;
+  left: 0;
+  right: 383px;
+  justify-content: center;
+  margin: auto;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+.arrow {
+    position: absolute;
+    top: 50%;
+  }
+  
+  .right {
+    right: 15px;
+    top: auto;
+    bottom: auto;
+  }
+  
+  .left {
+    left: 8px;
+    top: auto;
+    bottom: auto;
+  }
+  .carousel-item{
+      height: 42vh !important;
+  }
+.anticon-arrow-left svg {
+    fill: rgb(0, 158, 127);;
+}
+.anticon-arrow-right svg {
+    fill: rgb(0, 158, 127);;
+}
+.imgDiv{
+  width: 58px;
+  height: 61px;
+  margin-left: 12px;
+  /* background-color: blueviolet; */
+  cursor: pointer;
+}
+.active .imgDiv{
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(0, 158, 127);
+  border-image: initial;
+}
+@media (max-width: 767px){
+  .react-multi-carousel-dot-list {
+    position: relative;
+    bottom: 0;
+    height: 10vh;
+   
+    /* color: blueviolet; */
+    
+    display: flex;
+    /* background: antiquewhite; */
+    background-color: #fff;
+    
+    justify-content: center;
+
+    padding: 0;
+    
+    list-style: none;
+    text-align: center;
+    /* position: absolute;
+    bottom: 0;
+    height: 10vh;
+    
+    display: flex;
+    left: 0;
+    top: 284px;
+    right: 0;
+    justify-content: center;
+    margin: auto;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center; */
+}
+.carousel-item {
+  height: 35vh !important;
+}
+.imgDiv {
+  width: 46px;
+  height: 53px;
+  margin-left: 12px;
+  /* background-color: blueviolet; */
+  cursor: pointer;
+}
+}

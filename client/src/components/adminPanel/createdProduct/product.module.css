@@ -1,0 +1,120 @@
+.prodDivHeading{
+    text-align: center;
+    background: aliceblue;
+}
+.prodDivHeading h1{
+    font-weight: 700;
+    font-size: 200%;
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+.coverImg{
+    max-width: 89%;
+    /* margin-left: 30px; */
+    max-height: 100%;
+    display: inline-block;
+}
+.CardsOriginal{
+    width: 233px;
+
+
+}
+.mainCardDiv{
+    background: aliceblue;
+    padding-left: 13px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+    padding-bottom:23px;
+    margin-left: -12px;
+}
+.cardStyle{
+    margin-top: 22px;
+    margin-left: 15px;
+}
+.createPButton{
+    background-color: #fff;
+    width: 240px;
+    margin-left: 15px;
+    border: 1px solid #e5e5e5;
+    box-sizing: border-box;
+    margin-top: 22px;
+    /* height:42.5vh; */
+    height: 354.3px;
+    cursor: pointer;
+}
+.textDiv{
+    text-align: center;
+    color: #555;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.textDiv::before{
+    content: '+';
+    background-color: #78cdd2;
+    color: #fff;
+    font-size: 48px;
+    font-weight: 400;
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    display: block;
+    margin: 40px auto 20px;
+    line-height: 59px;
+}
+.EndDiv{
+    display: flex;
+    justify-content: space-between;
+
+}
+.PriceStyle{
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(0, 158, 127);
+    padding-top: 9px;
+}
+.dellButton{
+    margin: 9px;
+    margin: 9px;
+    height: 31px;
+    padding-left: 17px;
+    padding-right: 18px;
+    font-size: 12px;
+    font-weight: 700;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(247, 247, 247);
+    border-image: initial;
+    border-radius: 18px;
+    margin-top: 2px;
+    color: rgb(0, 158, 127);
+    cursor: pointer;
+}
+.updateBtn{
+    height: 31px;
+    padding-left: 17px;
+    padding-right: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(247, 247, 247);
+    border-image: initial;
+    border-radius: 18px;
+    margin-top: 2px;
+    color: rgb(0, 158, 127);
+    cursor: pointer;
+}
+@media only screen and (max-width:1270px){
+    .mainCardDiv{
+        background: aliceblue;
+        padding-left: 13px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 35px;
+        padding-bottom:23px;
+        
+    }
+}

@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8e551a0d.chunk.css",
+    "main.js": "/static/js/main.4a946c61.chunk.js",
+    "main.js.map": "/static/js/main.4a946c61.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c3077f9b.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c3077f9b.js.map",
+    "static/css/2.4b222078.chunk.css": "/static/css/2.4b222078.chunk.css",
+    "static/js/2.9caa208b.chunk.js": "/static/js/2.9caa208b.chunk.js",
+    "static/js/2.9caa208b.chunk.js.map": "/static/js/2.9caa208b.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.8cd2b5aacff864a93b12d64a9ea2f535.js": "/precache-manifest.8cd2b5aacff864a93b12d64a9ea2f535.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.4b222078.chunk.css.map": "/static/css/2.4b222078.chunk.css.map",
+    "static/css/main.8e551a0d.chunk.css.map": "/static/css/main.8e551a0d.chunk.css.map",
+    "static/js/2.9caa208b.chunk.js.LICENSE.txt": "/static/js/2.9caa208b.chunk.js.LICENSE.txt",
+    "static/media/bag.74cbd77d.svg": "/static/media/bag.74cbd77d.svg",
+    "static/media/black-female-dress-icon.2cab6b48.svg": "/static/media/black-female-dress-icon.2cab6b48.svg",
+    "static/media/cart-minus.18040c7c.svg": "/static/media/cart-minus.18040c7c.svg",
+    "static/media/home.module.css": "/static/media/clothes_background.dce64b9d.jpg",
+    "static/media/dress.ae3f02db.svg": "/static/media/dress.ae3f02db.svg",
+    "static/media/freeDelivey.png": "/static/media/freeDelivey.90d3534e.png",
+    "static/media/giftVoucher.jpg": "/static/media/giftVoucher.977f3760.jpg",
+    "static/media/jeans-pants.4bf3ca18.svg": "/static/media/jeans-pants.4bf3ca18.svg",
+    "static/media/long-arrow-left.5bf916de.svg": "/static/media/long-arrow-left.5bf916de.svg",
+    "static/media/men-suit.c644bb55.svg": "/static/media/men-suit.c644bb55.svg",
+    "static/media/styles.css": "/static/media/revicons.2feb69cc.eot",
+    "static/media/search-line.6f2a7d76.svg": "/static/media/search-line.6f2a7d76.svg",
+    "static/media/slick-theme.css": "/static/media/slick.f97e3bbf.svg",
+    "static/media/woman-shirt.7f93ec2a.svg": "/static/media/woman-shirt.7f93ec2a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c3077f9b.js",
+    "static/css/2.4b222078.chunk.css",
+    "static/js/2.9caa208b.chunk.js",
+    "static/css/main.8e551a0d.chunk.css",
+    "static/js/main.4a946c61.chunk.js"
+  ]
+}

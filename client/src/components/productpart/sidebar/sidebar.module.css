@@ -1,0 +1,61 @@
+.SideBarWrapper{
+    width: 280px;
+    height: 100vh;
+    background: rgb(255, 255, 255);;
+    position: sticky;
+    top: 0;
+}
+.logoIconwomendresses svg{
+    width: 23px;
+    height: auto;
+}
+.contentDiv ul{
+    display: block;
+    margin-top: 22px;
+}
+.contentDiv ul li{
+    margin-bottom: 22px;
+    padding-left: 33px;
+    /* padding: 10px; */
+    /* background-color: darkolivegreen; */
+}
+.contentDiv ul li:hover,
+.contentDiv ul li:hover p{
+    cursor: pointer;
+    fill: rgb(0, 158, 127);
+    color: rgb(0, 158, 127);
+}
+/* .contentDiv ul li:hover p:hover{
+    
+} */
+/* .contentDiv ul li svg:hover{
+    fill: rgb(0, 158, 127);
+} */
+.logoIconwomendresses span{
+    padding-left: 22px;
+}
+.listItemDiv{
+    display: flex;
+    padding-left: 0px;
+    padding-top: 15px;
+}
+.listItemDiv p{
+    padding-left: 24px;
+    color: rgb(13, 17, 54);
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+}
+@media only screen and (max-width:477px){
+    .SideBarWrapper {
+        width: 280px;
+        height: 100vh;
+        margin-top: 64px;
+        background: aqua;
+    }
+}
+@media only screen and (max-width:990px){
+    .SideBarWrapper {
+      display: none;
+    }
+}

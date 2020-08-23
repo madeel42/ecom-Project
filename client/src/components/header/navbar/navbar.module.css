@@ -1,0 +1,331 @@
+.mainNavbardiv{
+    display: flex;
+    justify-content: space-between;
+    padding: 19px;
+    align-items: center;
+    /* background: coral; */
+}
+
+.ulList{
+    display: flex;
+    align-items: center;
+}
+.ulListClosebtn{
+    display: none;
+}
+.backarrowDiv{
+    color: rgb(13, 17, 54);
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    background: transparent;
+    padding: 0px 15px;
+
+}
+.backarrowDiv svg{
+    width: 24px;
+}
+.SearchIconDiv{
+    width: 50px;
+    /* height: auto; */
+    appearance: button;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(buttontext, rgb(170, 170, 170));
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    background-color: -internal-light-dark(rgb(239, 239, 239), rgb(74, 74, 74));
+    box-sizing: border-box;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    height: 48px;
+    -webkit-box-align: center;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    cursor: pointer;
+    flex-shrink: 0;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    outline: 0px;
+    padding: 1px 6px;
+    color: rgb(13, 17, 54);
+    padding-left: 15px;
+    padding-right: 15px;
+    background: transparent;
+
+}
+.SearchIconDiv svg{
+    width: 15px;
+}
+.spanGrocery{
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 38px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: rgb(0, 158, 127);
+    background-color: rgb(247, 247, 247);
+    white-space: nowrap;
+    text-transform: capitalize;
+    border-radius: 6px;
+    margin: 5px;
+}
+.inputbox{
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: textfield;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    font-size: 15px;
+    color: rgb(13, 17, 54);
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 48px;
+    color: rgb(119, 121, 140);
+    background-color: inherit;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    font: 400 13.3333px Arial;
+}
+.wrapper1{
+    display: none;
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    background-color: #fff;
+    z-index: 9999;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+.contentWrappr{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+.inputbox{
+    width: 100%;
+}
+.ulList li {
+    margin-left: 3px;
+    margin-left: 39px;
+    /* padding: 6px 0; */
+    padding-top: 9px;
+    padding-bottom: 4.5px;
+    font-size: 156%;
+    font-family: SANS-SERIF;
+    color: #fff;
+    font-weight: bold;
+    border: 2px solid transparent;
+    transition: border 0.3s;
+    
+}
+
+.ulList li:last-of-type{
+    padding-top: 3px;
+}
+.ulList li:last-of-type:hover{
+border-bottom: 2px solid transparent;
+}
+.Searchicon{
+    display: none;
+}
+.mainNavbardiv svg{
+    width: 18px;
+    filter: invert(1);
+    height: auto;
+    cursor: pointer;
+}
+.ulList li:last-of-type button{
+    padding: 8px;
+    width: 80px;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #fff;
+    background-color: rgb(0, 158, 127);
+    /* margin-bottom: 18px; */
+    margin-top: 5px;
+}
+.ulList li:hover{
+    cursor: pointer;
+    color: rgb(0, 158, 127);
+    border-bottom: 2px solid rgb(0, 158, 127);
+}
+.applogo{
+    height: 8vh;
+    width: 91px;
+    filter: invert(1);
+    cursor: pointer;
+}
+.MenuBar{
+    display: none;
+    height: 8vh;
+    width: 55px;
+    filter: invert(1) sepia(1) sepia(1) grayscale(1) saturate(0.5);
+    cursor: pointer;
+}
+
+
+
+@media only screen and (max-width:990px){
+    .ulList{
+        /* display: none; */
+        position: fixed;
+    display: block;
+    text-align: -webkit-center;
+    width: 100%;
+    /* left: -100%; */
+    right: -100%;
+    top: 0;
+    height: auto;
+    background: #555;
+    z-index: 1;
+    transition: all .5s;
+
+    }
+    .ulListClosebtn{
+        display: block;
+    position: absolute;
+    /* right: 9px; */
+    left: 9px;
+    top: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 21px;
+    cursor: pointer;
+    
+    }
+    .ulListShow{
+        position: fixed;
+        display: block;
+        text-align: -webkit-center;
+        width: 100%;
+        /* left: 0; */
+        right: 0;
+        top: 0;
+        height: auto;
+        background: #555;
+        z-index: 1;
+        transition: all .5s;
+    }
+    .ulList li,
+    .ulListShow li{
+        margin-top: 20px;
+        padding: 1px 0;
+        width: max-content;
+        font-size: 156%;
+        font-family: SANS-SERIF;
+        color: #fff;
+        font-weight: bold;
+        border: 2px solid transparent;
+        /* margin-bottom: 18px; */
+    }
+    .ulListShow li:hover{
+        cursor: pointer;
+        color: rgb(0, 158, 127);
+        border-bottom: 2px solid rgb(0, 158, 127);
+    }
+    .ulListShow li:last-of-type:hover{
+        border-bottom: 2px solid transparent;
+        }
+    .ulListShow li:last-of-type button{
+        padding: 8px;
+        width: 80px;
+        border: none;
+        outline: none;
+        font-size: 17px;
+        cursor: pointer;
+        border-radius: 4px;
+        color: #fff;
+        background-color: rgb(0, 158, 127);
+        margin-bottom: 18px;
+        
+    }
+    .MenuBar{
+        display: block;
+        height: 7vh;
+    width: 46px;
+        filter: invert(1) sepia(1) sepia(1) grayscale(1) saturate(0.5);
+        cursor: pointer;
+    }
+    .mainNavbardiv{
+        display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    padding-bottom: 0;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-bottom: 30px;
+        /* background: coral; */
+    }
+    .Searchicon{
+        display: block;
+    }
+    .wrapper1{
+display: none;
+    }
+    .wrapper{
+        display: block;
+        width: 100%;
+        height: auto;
+        position: fixed;
+        background-color: #fff;
+        z-index: 9999;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        
+    }
+   
+}
+@media only screen and (min-width:991px) and (max-width:1536px){
+.checkout{ display: none;}
+}
+@media only screen and (max-width:476px){
+    .applogo{ height: 7vh;
+    width: 54px;
+    filter: invert(1);
+    cursor: pointer;
+    }
+ 
+}

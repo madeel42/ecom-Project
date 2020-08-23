@@ -1,0 +1,290 @@
+
+    .modal {
+        position: fixed;
+        width: 500px;
+        height: auto;
+        top: 20px;
+        right: 20px;
+        left: 20px;
+        bottom: 20px;
+        box-shadow: 0 1px 2px rgba(0,0,0,.2);
+        background: #FFF;
+      }
+      .mainDiv{
+        display: flex;
+      }
+   .firstDiv{
+    width: 100%;
+    height: 50vh;
+    /* background-color: skyblue; */
+    max-width: 50%;
+     /* background-color: skyblue; */
+   }
+   .firstDiv img{
+    width: 100%;
+    height: 100%;
+   }
+   .secondDiv{
+    width: 100%;
+    height: 50vh;
+    padding-left: 5px;
+    border-left: 1px solid rgb(243, 243, 243);
+    /* background-color: cyan; */
+   }
+   .modalWidth{
+     width: 789px;
+   }
+   .modelItemHeading{
+    font-family: Poppins, sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: rgb(13, 17, 54);
+    line-height: 1.5;
+    width: 255px;
+    margin-bottom: 0;
+   }
+   .contentModelproductNumber{
+    font-family: Lato, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgb(119, 121, 140);
+   }
+   .secondContentDiv{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+   }
+   .priceDiv{
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(0, 158, 127);
+   }
+   .contentModelDescription{
+    font-family: Lato, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgb(66, 69, 97);
+    line-height: 2;
+    margin-top: 16px;
+   }
+   .modelCartbtnDiv{
+    margin-top: 39px;
+   }
+   .cartButon{
+    height: 36px;
+    padding-left: 17px;
+    padding-right: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(247, 247, 247);
+    border-image: initial;
+    border-radius: 18px;
+    margin-top: 2px;
+    color: rgb(0, 158, 127);
+    transition: all .2s;
+}
+.cartButon:hover{
+  cursor: pointer;
+  background-color: rgb(0, 158, 127);
+  color: #fff;
+}
+.cartButon:hover svg{
+  fill: #fff;
+}
+.cartButon span{
+  padding: 9px;
+}
+.cartButon svg{
+width: 10px;
+height: auto;
+fill:rgb(0, 158, 127) ;
+}
+.mainPicture{
+  width: 100%;
+  height: 40vh;
+  /* background-color: springgreen; */
+}
+.tab1{
+  width: 25%;
+    height: 10.1vh !important;
+  /* background-color: tan; */
+
+}
+.tab1 img {
+  width: 100%;
+  height: 100%;
+}
+.tab2{
+  width: 25%;
+  height: 10.1vh !important;
+  /* background-color: tan; */
+  margin-left: 13px;
+
+}
+.activeborder{
+  border: 2px solid rgb(0, 158, 127);
+    border-radius: 6px;
+}
+
+.tab2 img {
+  width: 100%;
+  height: 100%;
+}
+.tab3{
+  width: 25%;
+    height: 10.1vh !important;
+  /* background-color: tan; */
+  margin-left: 13px;
+
+}
+.tab3 img {
+  width: 100%;
+  height: 100%;
+}
+.mainTabDiv{
+  display: flex;
+  justify-content: center;
+}
+.modelcartsbuttonhide{
+  display: none;
+}
+.plUsMinusDiv{
+  /* display: flex; */
+  background-color: rgb(0, 158, 127);
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  font-weight: 700;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 85px;
+  height: 36px;
+  border-radius: 200px;
+  overflow: hidden;
+  display: none;
+}
+.plUsMinusDivshow{
+  display: flex;
+  background-color: rgb(0, 158, 127);
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  font-weight: 700;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 85px;
+  height: 36px;
+  border-radius: 200px;
+  overflow: hidden;
+/* display: block; */
+}
+.plusbutton{
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  height: 100%;
+  cursor: pointer;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  padding: 10px;
+}
+.minusButton{
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  height: 100%;
+  cursor: pointer;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  padding: 10px;
+}
+   @media (max-width: 600px){
+    /* .mainDiv{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    } */
+    .modelItemHeading{
+      font-family: Poppins, sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    margin-top: 3px;
+    color: rgb(13, 17, 54);
+    line-height: 1.5;
+    width: 161px;
+    margin-bottom: 0;
+}
+.secondDiv{
+
+  border-left: none;
+  /* background-color: cyan; */
+ }
+   }
+   @media (max-width: 767px){
+     .firstDiv{
+      width: none !important;
+      height: auto !important;
+      /* background-color: skyblue; */
+      max-width: none !important;
+     }
+    .mainDiv{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .secondContentDiv{
+      display: flex;
+      justify-content: space-between;
+     }
+     .modelItemHeading{
+    font-family: Poppins, sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: rgb(13, 17, 54);
+    line-height: 1.5;
+    width: 197px;
+    margin-bottom: 0;
+   }
+   .secondDiv {
+    width: 100%;
+    height: 42vh;
+    /* margin-top: 137px; */
+    padding-left: 5px;
+    border-left: 1px solid rgb(243, 243, 243);
+    
+    /* background-color: cornflowerblue; */
+    /* width: 100%;
+    height: 50vh;
+    margin-top: 89px;
+    padding-left: 5px;
+    border-left: 1px solid rgb(243, 243, 243); */
+    
+}
+   /* .secondDiv {
+    width: 100%;
+    height: 50vh;
+    margin-top: 61px;
+    padding-left: 5px;
+    border-left: 1px solid rgb(243, 243, 243);
+    background-color: cyan;
+} */
+  }

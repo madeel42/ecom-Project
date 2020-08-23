@@ -1,0 +1,63 @@
+.productContent{
+    /* background: antiquewhite; */
+    width: 100%;
+    height: auto;
+}
+.productList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* margin: 0 15px; */
+    /* padding: 21px; */
+}
+.CardsOriginal{
+    width: 240px;
+
+
+}
+.cardStyle{
+    margin-top: 22px;
+    margin-left: 15px;
+    /* margin: 22px; */
+}
+.loadMoreBtnDiv{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.loadMoreBtn{
+    padding: 8px;
+    width: 100px;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #fff;
+    background-color: rgb(0, 158, 127);
+   
+}
+.hideBtn{
+    display: none;
+}
+@media only screen and (max-width:1264px){
+    .productList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -14px;
+    }
+}
+@media only screen and (max-width:1264px){
+    .CardsOriginal {
+        width: 210px;
+    }
+    }
+    @media only screen and (max-width:580px){
+    .productContent {
+        /* background: antiquewhite; */
+        width: 100%;
+        height: auto;
+        margin-bottom: 81px;
+    }
+}
