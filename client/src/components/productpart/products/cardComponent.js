@@ -41,7 +41,6 @@ const CardComponent = (props) => {
       ? cardComclasses.plUsMinusDivshow
       : cardComclasses.plUsMinusDiv;
   };
-
   const Draweritem = (item, index) => {
     props.dispatchData(item);
   };
@@ -54,12 +53,12 @@ const CardComponent = (props) => {
   const itemNumberFun = (item) => {
     props.itemLength(item);
   };
-
   const filterForEveryOne = (item) => {
-    console.log(item);
-
     return item.filter((object) => {
-      const checkField = object.Pname.toLowerCase();
+      // console.log(object)
+      // if(typeof text === 'string')
+      const checkField =
+        typeof object.Pname === "string" ? object.Pname.toLowerCase() : "";
       const filteredField = search.searchProduct.toLowerCase();
       return checkField.includes(filteredField);
     });

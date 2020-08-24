@@ -10,9 +10,9 @@ let initialData = {
 const dataReducer = (state = initialData, action) => {
   let newState = JSON.parse(JSON.stringify(state));
   switch (action.type) {
-    case 'persist/REHYDRATE':
-      if(action.data){
-          state = action.data.dataReducer
+    case "persist/REHYDRATE":
+      if (action.data) {
+        state = action.data.dataReducer;
       }
       return state;
 
