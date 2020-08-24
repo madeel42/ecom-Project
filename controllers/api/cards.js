@@ -55,12 +55,30 @@ exports.fetch_singleObjData = (req, res) => {
 };
 exports.updateCardsData = (req, res) => {
   console.log(req.body);
-  console.log(req.file.path);
-  const { path } = req.file;
+  // console.log(req.file.path);
+  // const { path } = req.file;
   let data = req.cardsData;
-  data = lodash.extend(data, req.body, { file: path.slice(15) });
+  if (req.file) {
+    var dataResource = {
+      file: req.file.path.slice(15),
+      Pname: req.body.Pname,
+      counter: req.body.counter,
+      description: req.body.description,
+      price: req.body.price,
+    };
+  } else {
+    var dataResource = {
+      Pname: req.body.Pname,
+      counter: req.body.counter,
+      description: req.body.description,
+      price: req.body.price,
+    };
+  }
+  data = lodash.extend(data, dataResource);
   data.save((err, data) => {
-    err ? res.json({ error: err }) : res.json({data,message:"data updated successfully"});
+    err
+      ? res.json({ error: err })
+      : res.json({ data, message: "data updated successfully" });
   });
 };
 exports.deleteCardsData = (req, res) => {
