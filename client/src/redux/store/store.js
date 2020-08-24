@@ -9,13 +9,23 @@ const persistConfig = {
 };
 const middleWare = [thunk];
 const persistedReducer = persistReducer(persistConfig, allReducer);
-let store = createStore(
-    persistedReducer,
-  compose(
-    applyMiddleware(...middleWare),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
-);
+if(process.env.NODE_ENV === 'production') {
+ var store = createStore(persistedReducer, compose(
+      applyMiddleware(...middleWare)
+  ));
+} else {
+ var store = createStore(persistedReducer, compose(
+      applyMiddleware(...middleWare),
+      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  ));
+}
+// let store = createStore(
+//     persistedReducer,
+//   compose(
+//     applyMiddleware(...middleWare),
+//     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+//   )
+// );
 window.store = createStore(persistedReducer);
 export const persistor = persistStore(store);
 export default store;
