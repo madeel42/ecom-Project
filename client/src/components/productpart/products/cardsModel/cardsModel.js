@@ -21,6 +21,8 @@ const CardsModel = (props) => {
     getCardClass,
     itemNumberFun,
     getCardClass1,
+    counterUpdaterPlus,
+    counterUpdaterMinus,
   } = props;
   console.log(item);
   console.log(drawercallback);
@@ -71,7 +73,13 @@ const CardsModel = (props) => {
                   <div className={getCardClass1(item)}>
                     <button
                       className={cardComclasses.plusbutton}
-                      onClick={() => Draweritem(item)}
+                      // onClick={() => {
+                      //   Draweritem(item), counterUpdaterPlus(item);
+                      // }}
+                      onClick={() => {
+                        Draweritem(item);
+                        counterUpdaterPlus(item);
+                      }}
                     >
                       +
                     </button>
@@ -80,6 +88,7 @@ const CardsModel = (props) => {
                       className={cardComclasses.minusButton}
                       onClick={() => {
                         decrementFun(item);
+                        counterUpdaterMinus(item);
                       }}
                     >
                       -

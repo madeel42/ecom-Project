@@ -28,6 +28,64 @@ const CardComponent = (props) => {
     setmodelItemIndex(index);
     props.dispatchModelItem(item);
   };
+  const counterUpdaterPlus = (item) => {
+    let { _id, counter,description,Pname,price } = item;
+    counter = counter + 1;
+    console.log(_id, counter);
+    if (counter > 1) {
+      fetch(`/updateCardsData/${_id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ counter,description,Pname,price }),
+      })
+        .then((res) => {
+          return res.json();
+        })
+        .then((res) => {
+          console.log(res);
+        });
+    }
+  };
+  const counterUpdaterMinus = (item) => {
+    let { _id, counter,description,Pname,price } = item;
+    if (counter > 1) {
+      counter = counter > 1 ? counter - 1 : counter;
+      console.log(_id, counter);
+      fetch(`/updateCardsData/${_id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ counter,description,Pname,price }),
+      })
+        .then((res) => {
+          return res.json();
+        })
+        .then((res) => {
+          console.log(res);
+        });
+    }
+  };
+  const drawerCrossButton = (item) => {
+    let { _id, counter,description,Pname,price } = item;
+    counter = 1;
+    console.log(_id, counter);
+    fetch(`/updateCardsData/${_id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ counter,description,Pname,price }),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        console.log(res);
+      });
+  };
   const handleOk = (e) => {
     setvisible(false);
   };
@@ -109,6 +167,7 @@ const CardComponent = (props) => {
                   <button
                     onClick={() => {
                       Draweritem(item, index);
+                      counterUpdaterPlus(item);
                     }}
                     className={cardComclasses.plusbutton}
                   >
@@ -117,7 +176,10 @@ const CardComponent = (props) => {
                   <span>{item.counter}</span>
                   <button
                     className={cardComclasses.minusButton}
-                    onClick={() => decrementFun(item, index)}
+                    onClick={() => {
+                      decrementFun(item, index);
+                      counterUpdaterMinus(item);
+                    }}
                   >
                     -
                   </button>
@@ -138,6 +200,8 @@ const CardComponent = (props) => {
         getCardClass={getCardClass}
         getCardClass1={getCardClass1}
         itemNumberFun={itemNumberFun}
+        counterUpdaterPlus={counterUpdaterPlus}
+        counterUpdaterMinus={counterUpdaterMinus}
       />
 
       <div>
@@ -146,6 +210,9 @@ const CardComponent = (props) => {
           decrementFun={decrementFun}
           cardToShow={cardToShow}
           Draweritem={Draweritem}
+          counterUpdaterPlus={counterUpdaterPlus}
+          counterUpdaterMinus={counterUpdaterMinus}
+          drawerCrossButton={drawerCrossButton}
         />
       </div>
     </div>

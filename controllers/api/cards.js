@@ -54,7 +54,7 @@ exports.fetch_singleObjData = (req, res) => {
   return res.json(req.cardsData);
 };
 exports.updateCardsData = (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   // console.log(req.file.path);
   // const { path } = req.file;
   let data = req.cardsData;
@@ -66,10 +66,16 @@ exports.updateCardsData = (req, res) => {
       description: req.body.description,
       price: req.body.price,
     };
+  } else if (req.body) {
+    var dataResource = {
+      counter: req.body.counter,
+      Pname: req.body.Pname,
+      description: req.body.description,
+      price: req.body.price,
+    };
   } else {
     var dataResource = {
       Pname: req.body.Pname,
-      counter: req.body.counter,
       description: req.body.description,
       price: req.body.price,
     };

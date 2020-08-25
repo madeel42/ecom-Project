@@ -6,7 +6,14 @@ import { ReactComponent as Bag } from "./assets/bag.svg";
 import { connect } from "react-redux";
 import midddleWare from "../../redux/middlewares/middleWare";
 const DrawerComponent = (props) => {
-  const { draweritem, Draweritem, decrementFun } = props;
+  const {
+    draweritem,
+    Draweritem,
+    decrementFun,
+    counterUpdaterMinus,
+    counterUpdaterPlus,
+    drawerCrossButton,
+  } = props;
   console.log(draweritem);
 
   const [visible, setVisible] = useState(false);
@@ -69,7 +76,10 @@ const DrawerComponent = (props) => {
                         <div className={classes.counterBtnStyle}>
                           <button
                             className={classes.itemPlusbuttonStyle}
-                            onClick={() => Draweritem(item, index)}
+                            onClick={() => {
+                              Draweritem(item, index);
+                              counterUpdaterPlus(item);
+                            }}
                           >
                             +
                           </button>
@@ -78,6 +88,7 @@ const DrawerComponent = (props) => {
                             className={classes.itemMinusbuttonStyle}
                             onClick={() => {
                               decrementFun(item, index);
+                              counterUpdaterMinus(item);
                             }}
                           >
                             -
@@ -104,7 +115,10 @@ const DrawerComponent = (props) => {
                         </span>
                         <button
                           className={classes.listCrossButton}
-                          onClick={() => itemDel(item, index)}
+                          onClick={() => {
+                            itemDel(item, index);
+                            drawerCrossButton(item);
+                          }}
                         >
                           x
                         </button>
