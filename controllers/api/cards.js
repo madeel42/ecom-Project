@@ -9,8 +9,6 @@ var storage = multer.diskStorage({
 });
 exports.uploadpic = multer({ storage: storage });
 exports.createCardItem = (req, res) => {
-  console.log(req.file);
-  console.log(req.body);
   let { price } = req.body;
   let { Pname } = req.body;
   let { counter } = req.body;

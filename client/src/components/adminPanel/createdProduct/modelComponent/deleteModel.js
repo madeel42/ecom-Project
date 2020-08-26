@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal } from "antd";
+import classes from './del.module.css'
 export const ConfirmDelete = ({
   confirmModelopen,
   handleDeleteCancelModel,
@@ -13,7 +14,7 @@ export const ConfirmDelete = ({
       closable={false}
       onCancel={handleDeleteCancelModel}
     >
-      <h1>Are you sure you want to delete?</h1>
+      <div className={classes.confirmDivHeading}><h1>Are you sure you want to delete?</h1></div>
     </Modal>
   );
 };
