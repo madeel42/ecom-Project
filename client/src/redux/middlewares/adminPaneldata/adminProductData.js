@@ -71,6 +71,7 @@ class adminPanelMiddleWare {
     };
   }
   static deleteProduct(data) {
+    let deleteFlag = true;
     const { _id } = data;
     return (dispatch) => {
       fetch(`/deleteCardsData/${_id}`, {
@@ -84,7 +85,7 @@ class adminPanelMiddleWare {
           return res.json();
         })
         .then((res) => {
-          // console.log(res);
+          console.log(res);
         });
     };
   }

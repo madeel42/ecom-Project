@@ -7,13 +7,14 @@ import { Spin } from "antd";
 import { Link } from "react-router-dom";
 import adminProductData from "../../../redux/middlewares/adminPaneldata/adminProductData";
 import ModalComponent from "./modelComponent/model";
-import { json } from "body-parser";
+import { ConfirmDelete } from "./modelComponent/deleteModel";
 // import img11 from "../../productpart/assets/img11.jpg";
 const key = "updatable";
 const { Meta } = Card;
 const CreatedProdComp = (props) => {
   const [visible, setVisible] = useState(false);
-  const [deleteRender, setdeleteRender] = useState(false);
+  const [confirmModelopen, setconfirmModelopen] = useState(false);
+  // const [deleteRender, setdeleteRender] = useState(false);
   const [updateRender, setupdateRender] = useState(false);
   const [selectedValue, setselectedValue] = useState({
     Pname: "",
@@ -22,9 +23,10 @@ const CreatedProdComp = (props) => {
     description: "",
     file: null,
   });
+  const [selectDeleteValue, setselectDeleteValue] = useState();
   useEffect(() => {
     props.dispatchData();
-  }, [deleteRender,updateRender]);
+  }, [updateRender]);
   const showModal = (item) => {
     setVisible(true);
     // console.log(item);
@@ -34,16 +36,16 @@ const CreatedProdComp = (props) => {
     message.loading({ content: "updating...", key });
     setTimeout(() => {
       return selectedValue.Pname == "" ||
-      selectedValue.description == "" ||
-      selectedValue.counter == null ||
-      selectedValue.file == null ||
-      selectedValue.price == null
-      ? message.error({ content: "fill required field", key, duration: 2 })
-      : message.success({
-        content: "updated successfully",
-        key,
-        duration: 2,
-      }) && props.dispatchDataUpdate(selectedValue);
+        selectedValue.description == "" ||
+        selectedValue.counter == null ||
+        selectedValue.file == null ||
+        selectedValue.price == null
+        ? message.error({ content: "fill required field", key, duration: 2 })
+        : message.success({
+            content: "updated successfully",
+            key,
+            duration: 2,
+          }) && props.dispatchDataUpdate(selectedValue);
     }, 1000);
     // props.dispatchDataUpdate(selectedValue);
     // setupdateMessage(dataUpdatedMessage)
@@ -51,18 +53,29 @@ const CreatedProdComp = (props) => {
   const handleCancel = () => {
     let upadateFlag = updateRender === false ? true : false;
     setVisible(false);
-    setupdateRender(upadateFlag)
+    setupdateRender(upadateFlag);
   };
-  const handleDelete = (item) => {
-    props.dispatchDeleteData(item);
-    let eFlag = deleteRender === false ? true : false;
-    setdeleteRender(eFlag);
+  const handleDelete = () => {
+    message.loading({ content: "Loading...", key });
+    setTimeout(() => {
+      message.success({ content: "delete successfully", key, duration: 2 }) &&
+        props.dispatchDeleteData(selectDeleteValue);
+    }, 1000);
+  };
+  const showConfirmModel = (item) => {
+    setconfirmModelopen(true);
+    setselectDeleteValue(item);
+  };
+  const handleDeleteCancelModel = () => {
+    let upadateFlag = updateRender === false ? true : false;
+    setconfirmModelopen(false);
+    setupdateRender(upadateFlag);
   };
   if (props.isloading) {
     return (
-      <div >
+      <div>
         {" "}
-        <Spin className={classes.spinnerAdmin} size="large" tip="Loading..."/>
+        <Spin className={classes.spinnerAdmin} size="large" tip="Loading..." />
       </div>
     );
   } else {
@@ -94,7 +107,10 @@ const CreatedProdComp = (props) => {
                     <div>
                       <button
                         className={classes.dellButton}
-                        onClick={() => handleDelete(item)}
+                        onClick={() => {
+                          // handleDelete(item);
+                          showConfirmModel(item);
+                        }}
                       >
                         dell
                       </button>
@@ -123,6 +139,11 @@ const CreatedProdComp = (props) => {
             setselectedValue={setselectedValue}
             selectedValue={selectedValue}
             handleCancel={handleCancel}
+          />
+          <ConfirmDelete
+            confirmModelopen={confirmModelopen}
+            handleDeleteCancelModel={handleDeleteCancelModel}
+            handleDelete={handleDelete}
           />
         </div>
       </div>
