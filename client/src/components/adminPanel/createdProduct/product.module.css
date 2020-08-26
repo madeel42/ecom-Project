@@ -4,7 +4,7 @@
 }
 .prodDivHeading h1{
     font-weight: 700;
-    font-size: 200%;
+    font-size: 200% !important;
     padding-top: 9px;
     padding-bottom: 9px;
     color: #fff;
@@ -111,7 +111,7 @@
     color: rgb(0, 158, 127);
     cursor: pointer;
 }
-@media only screen and (max-width:476px){
+/* @media only screen and (max-width:476px){
     .prodDivHeading{
     text-align: center;
     background: rgb(0, 158, 127);
@@ -120,12 +120,12 @@
 .prodDivHeading h1{
     font-weight: 700;
     font-size: 200% !important;
-    padding-top: 10px;
-    color: #fff;
-    padding-bottom: 32px;
-    margin-bottom: 0;
+    padding-top: 10px !important;
+    color: #fff !important;
+    padding-bottom: 32px !important;
+    margin-bottom: 0 !important;
 }
-}
+} */
 @media only screen and (max-width:1270px){
     .mainCardDiv{
         background: aliceblue;
