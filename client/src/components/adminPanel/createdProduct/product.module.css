@@ -1,14 +1,21 @@
 .prodDivHeading{
     text-align: center;
     background: rgb(0, 158, 127);
+    padding: 14px 0;
 }
 .prodDivHeading h1{
     font-weight: 700;
+    font-size: 200%!important;
+    margin-top: 0px;
+    padding-bottom: 53px;
+    color: #fff;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    /* font-weight: 700;
     font-size: 200% !important;
     padding-top: 9px;
     padding-bottom: 9px;
-    color: #fff;
-    margin-bottom: 0;
+    color: #fff; */
 }
 .coverImg{
     max-width: 89%;
