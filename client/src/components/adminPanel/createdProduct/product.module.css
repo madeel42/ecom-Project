@@ -1,12 +1,14 @@
 .prodDivHeading{
     text-align: center;
-    background: aliceblue;
+    background: rgb(0, 158, 127);
 }
 .prodDivHeading h1{
     font-weight: 700;
     font-size: 200%;
     padding-top: 9px;
     padding-bottom: 9px;
+    color: #fff;
+    margin-bottom: 0;
 }
 .coverImg{
     max-width: 89%;
@@ -108,6 +110,21 @@
     margin-top: 2px;
     color: rgb(0, 158, 127);
     cursor: pointer;
+}
+@media only screen and (max-width:476px){
+    .prodDivHeading{
+    text-align: center;
+    background: rgb(0, 158, 127);
+    padding-top: 10px
+}
+.prodDivHeading h1{
+    font-weight: 700;
+    font-size: 200% !important;
+    padding-top: 10px;
+    color: #fff;
+    padding-bottom: 32px;
+    margin-bottom: 0;
+}
 }
 @media only screen and (max-width:1270px){
     .mainCardDiv{
