@@ -14,7 +14,6 @@ const DrawerComponent = (props) => {
     counterUpdaterPlus,
     drawerCrossButton,
   } = props;
-  console.log(draweritem);
 
   const [visible, setVisible] = useState(false);
 
@@ -25,7 +24,6 @@ const DrawerComponent = (props) => {
     setVisible(false);
   };
   const itemDel = (item, itemIndex) => {
-    console.log(itemIndex, item, " drwer itemIndex");
     props.dispatchData(item, itemIndex);
   };
   const total = draweritem

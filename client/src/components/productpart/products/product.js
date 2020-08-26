@@ -11,7 +11,6 @@ const Products = (props) => {
   const handleShowMorePosts = () => {
     setnext(next + 3);
   };
-  console.log(props.data, "store");
   return (
     <div className={classes.productContent}>
       {/* cardToShow={props.data} */}

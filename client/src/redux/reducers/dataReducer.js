@@ -1,9 +1,11 @@
 import * as allAction from "../Actions/allActions";
+import { flatMap } from "lodash";
 let initialData = {
   data1: [],
   drawerItem: [],
   itemLength: null,
   modelItem: {},
+  isloading: false,
 };
 
 // console.log(arr)
@@ -122,6 +124,11 @@ const dataReducer = (state = initialData, action) => {
       return {
         ...newState,
         data1: action.data,
+      };
+    case allAction.FETCH_DATA_LOADING:
+      return {
+        ...newState,
+        isloading: action.data,
       };
   }
   return state;

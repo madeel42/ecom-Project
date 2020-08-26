@@ -6,6 +6,7 @@ export const CROSS_ICON = "CROSS_ICON"
 export const MODEL_ITEM = "MODEL_ITEM"
 ///////////////AdminPanel////////
 export const PRODUCT_CREATED_BY_ADMIN = "PRODUCT_CREATED_BY_ADMIN"
+export const FETCH_DATA_LOADING = "FETCH_DATA_LOADING"
 
 
 

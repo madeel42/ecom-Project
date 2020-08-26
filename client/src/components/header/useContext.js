@@ -10,7 +10,7 @@ export const UserProvider = ({ children }) => {
 const clickHandle = () => {
     setsearchProduct(search)
 }
-console.log(searchProduct);
+// console.log(searchProduct);
   return (
     <SearchContext.Provider
       value={{

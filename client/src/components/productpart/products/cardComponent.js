@@ -3,6 +3,7 @@ import { Card } from "antd";
 import "antd/dist/antd.css";
 import cardComclasses from "./cardsCom.module.css";
 import "./cardsCustom.css";
+import { Spin } from "antd";
 import ModelComponent from "./cardsModel/cardsModel";
 import DrawerCom from "../../Drawer/drawer";
 import { ReactComponent as Cart } from "./cart/cartasset/cart-minus.svg";
@@ -18,7 +19,7 @@ const CardComponent = (props) => {
   const search = useContext(SearchContext);
   const [visible, setvisible] = useState(false);
   const [modelItemIndex, setmodelItemIndex] = useState();
-  const { cardToShow, visibleitem } = props;
+  const { cardToShow, visibleitem, isloading } = props;
   useEffect(() => {
     props.getCardsProduct();
   }, []);
@@ -29,7 +30,7 @@ const CardComponent = (props) => {
     props.dispatchModelItem(item);
   };
   const counterUpdaterPlus = (item) => {
-    let { _id, counter,description,Pname,price } = item;
+    let { _id, counter, description, Pname, price } = item;
     counter = counter + 1;
     console.log(_id, counter);
     if (counter > 1) {
@@ -38,7 +39,7 @@ const CardComponent = (props) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ counter,description,Pname,price }),
+        body: JSON.stringify({ counter, description, Pname, price }),
       })
         .then((res) => {
           return res.json();
@@ -49,7 +50,7 @@ const CardComponent = (props) => {
     }
   };
   const counterUpdaterMinus = (item) => {
-    let { _id, counter,description,Pname,price } = item;
+    let { _id, counter, description, Pname, price } = item;
     if (counter > 1) {
       counter = counter > 1 ? counter - 1 : counter;
       console.log(_id, counter);
@@ -58,7 +59,7 @@ const CardComponent = (props) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ counter,description,Pname,price }),
+        body: JSON.stringify({ counter, description, Pname, price }),
       })
         .then((res) => {
           return res.json();
@@ -69,7 +70,7 @@ const CardComponent = (props) => {
     }
   };
   const drawerCrossButton = (item) => {
-    let { _id, counter,description,Pname,price } = item;
+    let { _id, counter, description, Pname, price } = item;
     counter = 1;
     console.log(_id, counter);
     fetch(`/updateCardsData/${_id}`, {
@@ -77,7 +78,7 @@ const CardComponent = (props) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ counter,description,Pname,price }),
+      body: JSON.stringify({ counter, description, Pname, price }),
     })
       .then((res) => {
         return res.json();
@@ -121,74 +122,79 @@ const CardComponent = (props) => {
       return checkField.includes(filteredField);
     });
   };
+
   let filterArray = [];
   if (cardToShow && cardToShow.length > 0) {
     filterArray = filterForEveryOne(cardToShow);
   }
   return (
     <div className={classes.productList}>
-      {filterArray.slice(0, visibleitem).map((item, index) => {
-        return (
-          <div className={classes.cardStyle}>
-            <Card
-              hoverable
-              className={classes.CardsOriginal}
-              cover={
-                <img
-                  alt="example"
-                  className={cardComclasses.coverImg}
-                  onClick={() => showModal(item, index)}
-                  src={item.file}
-                />
-              }
-            >
-              <div>
-                <Meta
-                  title={item.Pname}
-                  description="1pc(s)"
-                  onClick={() => showModal(item, index)}
-                />
-              </div>
-              <div className={cardComclasses.cardsEndDiv}>
-                <p onClick={() => showModal(item, index)}>{item.price}$</p>
-                <button
-                  onClick={() => {
-                    Draweritem(item, index);
-                    itemNumberFun(1);
-                  }}
-                  className={getCardClass(item)}
-                >
-                  {" "}
-                  <Cart />
-                  <span>cart</span>{" "}
-                </button>
-
-                <div className={getCardClass1(item)}>
+      {isloading ? (
+        <Spin size="large" tip="Loading..."/>
+      ) : (
+        filterArray.slice(0, visibleitem).map((item, index) => {
+          return (
+            <div className={classes.cardStyle} key={item._id}>
+              <Card
+                hoverable
+                className={classes.CardsOriginal}
+                cover={
+                  <img
+                    alt="example"
+                    className={cardComclasses.coverImg}
+                    onClick={() => showModal(item, index)}
+                    src={item.file}
+                  />
+                }
+              >
+                <div>
+                  <Meta
+                    title={item.Pname}
+                    description="1pc(s)"
+                    onClick={() => showModal(item, index)}
+                  />
+                </div>
+                <div className={cardComclasses.cardsEndDiv}>
+                  <p onClick={() => showModal(item, index)}>{item.price}$</p>
                   <button
                     onClick={() => {
                       Draweritem(item, index);
-                      counterUpdaterPlus(item);
+                      itemNumberFun(1);
                     }}
-                    className={cardComclasses.plusbutton}
+                    className={getCardClass(item)}
                   >
-                    +
+                    {" "}
+                    <Cart />
+                    <span>cart</span>{" "}
                   </button>
-                  <span>{item.counter}</span>
-                  <button
-                    className={cardComclasses.minusButton}
-                    onClick={() => {
-                      decrementFun(item, index);
-                      counterUpdaterMinus(item);
-                    }}
-                  >
-                    -
-                  </button>
+
+                  <div className={getCardClass1(item)}>
+                    <button
+                      onClick={() => {
+                        Draweritem(item, index);
+                        counterUpdaterPlus(item);
+                      }}
+                      className={cardComclasses.plusbutton}
+                    >
+                      +
+                    </button>
+                    <span>{item.counter}</span>
+                    <button
+                      className={cardComclasses.minusButton}
+                      onClick={() => {
+                        decrementFun(item, index);
+                        counterUpdaterMinus(item);
+                      }}
+                    >
+                      -
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </Card>
-          </div>
-        );
-      })}
+              </Card>
+            </div>
+          );
+        })
+      )}
 
       <ModelComponent
         handleOk={handleOk}
@@ -231,6 +237,7 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
   return {
     cardToShow: state.dataReducer.data1,
+    isloading: state.dataReducer.isloading,
     // cardToShow: state.dataReducer.data,
     updatedData: state.dataReducer.drawerItem,
     updateActiveButton: state.dataReducer.isActive,

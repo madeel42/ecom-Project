@@ -28,7 +28,9 @@ class adminPanelMiddleWare {
     };
   };
   static getProductData = () => {
+    let isloading = true;
     return (dispatch) => {
+      dispatch(adminActionCreator.fetchDataLoading(isloading));
       fetch("/getCardItem", {
         method: "GET",
       })
@@ -36,8 +38,9 @@ class adminPanelMiddleWare {
           return res.json();
         })
         .then((res) => {
-          console.log(res);
           dispatch(adminActionCreator.productCreatedByAdmin(res));
+          isloading = false;
+          dispatch(adminActionCreator.fetchDataLoading(isloading));
         });
     };
   };
@@ -63,12 +66,12 @@ class adminPanelMiddleWare {
           return res.json();
         })
         .then((res) => {
-          console.log(res.message, "updated data from backend");
+          // console.log(res.message, "updated data from backend");
         });
     };
   }
   static deleteProduct(data) {
-    const {_id} = data
+    const { _id } = data;
     return (dispatch) => {
       fetch(`/deleteCardsData/${_id}`, {
         method: "DELETE",
@@ -81,7 +84,7 @@ class adminPanelMiddleWare {
           return res.json();
         })
         .then((res) => {
-          console.log(res);
+          // console.log(res);
         });
     };
   }

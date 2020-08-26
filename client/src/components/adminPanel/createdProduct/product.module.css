@@ -16,8 +16,11 @@
 }
 .CardsOriginal{
     width: 233px;
-
-
+}
+.spinnerAdmin{
+    width: 100%;
+    margin-top: 236px;
+    margin-left: 0px;
 }
 .mainCardDiv{
     background: aliceblue;

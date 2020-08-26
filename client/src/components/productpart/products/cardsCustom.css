@@ -12,3 +12,8 @@
     justify-content: center;
     padding: 5px;
 }
+.ant-spin-lg  {
+    font-size: 32px;
+    margin-top: 70px;
+    margin-left: 12px;
+}

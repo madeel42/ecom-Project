@@ -5,3 +5,9 @@ export const productCreatedByAdmin = (data) => {
     data,
   };
 };
+export const fetchDataLoading = (data) => {
+  return {
+    type:allAction.FETCH_DATA_LOADING,
+    data
+  }
+}

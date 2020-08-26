@@ -8,15 +8,11 @@ import { connect } from "react-redux";
 import Gallery from "./../cardsModel/galleryPic/galleryPic";
 
 const CardsModel = (props) => {
-  console.log(props);
   const {
     visible,
     setvisible,
     item,
-    draweritem,
-    modelItemIndex,
     decrementFun,
-    drawercallback,
     Draweritem,
     getCardClass,
     itemNumberFun,
@@ -24,13 +20,6 @@ const CardsModel = (props) => {
     counterUpdaterPlus,
     counterUpdaterMinus,
   } = props;
-  console.log(item);
-  console.log(drawercallback);
-  const [show, setShow] = useState(false);
-  const tab1Active = () => {
-    setShow(true);
-  };
-  console.log(draweritem ? draweritem : "");
   return (
     <div>
       <Modal
