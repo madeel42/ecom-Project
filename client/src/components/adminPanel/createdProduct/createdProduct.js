@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Card, message } from "antd";
 import "antd/dist/antd.css";
 import { Spin } from "antd";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import adminProductData from "../../../redux/middlewares/adminPaneldata/adminProductData";
 import ModalComponent from "./modelComponent/model";
 import { ConfirmDelete } from "./modelComponent/deleteModel";
@@ -56,11 +56,14 @@ const CreatedProdComp = (props) => {
     setupdateRender(upadateFlag);
   };
   const handleDelete = () => {
+    let upadateFlag = updateRender === false ? true : false;
     message.loading({ content: "Loading...", key });
     setTimeout(() => {
-      message.success({ content: "delete successfully", key, duration: 2 }) &&
-        props.dispatchDeleteData(selectDeleteValue);
+      message.success({ content: "delete successfully!", key, duration: 2 });
+      setupdateRender(upadateFlag);
     }, 1000);
+    props.dispatchDeleteData(selectDeleteValue);
+    setconfirmModelopen(false);
   };
   const showConfirmModel = (item) => {
     setconfirmModelopen(true);
