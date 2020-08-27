@@ -57,11 +57,12 @@ const CreatedProdComp = (props) => {
   };
   const handleDelete = (item) => {
     let upadateFlag = updateRender === false ? true : false;
-    message.loading({ content: "Loading...", key });
-    setTimeout(() => {
-      message.success({ content: "delete successfully!", key, duration: 2 });
+    // message.loading({ content: "Loading...", key });
+    // setTimeout(() => {
+    //   message.success({ content: "delete successfully!", key, duration: 2 });
+    //   setupdateRender(upadateFlag);
+    // }, 2000);
       setupdateRender(upadateFlag);
-    }, 2000);
     props.dispatchDeleteData(item);
     setconfirmModelopen(false);
   };
@@ -74,14 +75,14 @@ const CreatedProdComp = (props) => {
   //   setconfirmModelopen(false);
   //   setupdateRender(upadateFlag);
   // };
-  if (props.isloading) {
-    return (
-      <div>
-        {" "}
-        <Spin className={classes.spinnerAdmin} size="large" tip="Loading..." />
-      </div>
-    );
-  } else {
+  // if (props.isloading) {
+  //   return (
+  //     <div>
+  //       {" "}
+  //       <Spin className={classes.spinnerAdmin} size="large" tip="Loading..." />
+  //     </div>
+  //   );
+  // } else {
     return (
       <div>
         <div className={classes.prodDivHeading}>
@@ -128,7 +129,7 @@ const CreatedProdComp = (props) => {
                 </Card>
               </div>
             );
-          })}
+        })}
           <div>
             <Link to="/admin/form">
               <button className={classes.createPButton}>
@@ -151,7 +152,7 @@ const CreatedProdComp = (props) => {
         </div>
       </div>
     );
-  }
+  // }
 };
 const mapDispatchToProps = (dispatch) => {
   return {
