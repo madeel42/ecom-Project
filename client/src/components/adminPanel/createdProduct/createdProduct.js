@@ -55,25 +55,25 @@ const CreatedProdComp = (props) => {
     setVisible(false);
     setupdateRender(upadateFlag);
   };
-  const handleDelete = () => {
+  const handleDelete = (item) => {
     let upadateFlag = updateRender === false ? true : false;
     message.loading({ content: "Loading...", key });
     setTimeout(() => {
       message.success({ content: "delete successfully!", key, duration: 2 });
       setupdateRender(upadateFlag);
-    }, 1000);
-    props.dispatchDeleteData(selectDeleteValue);
+    }, 2000);
+    props.dispatchDeleteData(item);
     setconfirmModelopen(false);
   };
-  const showConfirmModel = (item) => {
-    setconfirmModelopen(true);
-    setselectDeleteValue(item);
-  };
-  const handleDeleteCancelModel = () => {
-    let upadateFlag = updateRender === false ? true : false;
-    setconfirmModelopen(false);
-    setupdateRender(upadateFlag);
-  };
+  // const showConfirmModel = (item) => {
+  //   setconfirmModelopen(true);
+  //   setselectDeleteValue(item);
+  // };
+  // const handleDeleteCancelModel = () => {
+  //   let upadateFlag = updateRender === false ? true : false;
+  //   setconfirmModelopen(false);
+  //   setupdateRender(upadateFlag);
+  // };
   if (props.isloading) {
     return (
       <div>
@@ -111,8 +111,8 @@ const CreatedProdComp = (props) => {
                       <button
                         className={classes.dellButton}
                         onClick={() => {
-                          // handleDelete(item);
-                          showConfirmModel(item);
+                          handleDelete(item);
+                          // showConfirmModel(item);
                         }}
                       >
                         dell
@@ -143,11 +143,11 @@ const CreatedProdComp = (props) => {
             selectedValue={selectedValue}
             handleCancel={handleCancel}
           />
-          <ConfirmDelete
+          {/* <ConfirmDelete
             confirmModelopen={confirmModelopen}
             handleDeleteCancelModel={handleDeleteCancelModel}
             handleDelete={handleDelete}
-          />
+          /> */}
         </div>
       </div>
     );
