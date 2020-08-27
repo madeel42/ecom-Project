@@ -2,11 +2,12 @@ import React from "react";
 import classes from "./form.module.css";
 import "antd/dist/antd.css";
 import "./customAnt.css";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { Form, Input, InputNumber, Button, message } from "antd";
 import { useState } from "react";
 import { connect } from "react-redux";
 import adminPanelMiddleWare from "../../../redux/middlewares/adminPaneldata/adminProductData";
+import { set } from "lodash";
 const layout = {
   labelCol: {
     span: 5,
@@ -32,6 +33,7 @@ const CPForm = (props) => {
     counter: null,
     description: "",
   });
+  const [rdirect, setrdirect] = useState(false);
   const [price, setproductPriceValue] = useState();
   const [cardImage, setcardImage] = useState();
   const handleValueChange = (e) => {
@@ -54,11 +56,22 @@ const CPForm = (props) => {
         : message.success({ content: "Saved", key, duration: 2 }) &&
             props.dispatchData({ productValue, price, cardImage });
     }, 1000);
+    setTimeout(()=>{
+      setrdirect(true);
+    },1900)
   };
+  console.log(rdirect,"rdirectt")
   console.log(price, "price after save");
   const handleValueChange1 = (e) => {
     console.log(e);
     setproductPriceValue(e);
+  };
+  const RedirectCom = () => {
+    return rdirect === true ? (
+      <Redirect to="/admin/product" />
+    ) : (
+      <Redirect to="/admin/form" />
+    );
   };
   const handleImageChange = (e) => {
     console.log(e.target.files[0]);
@@ -67,7 +80,7 @@ const CPForm = (props) => {
   console.log(productValue);
   return (
     <div>
-      {" "}
+      {RedirectCom()}{" "}
       <div className={classes.formNavDiv}>
         <h1 className={classes.heading}>Create product</h1>
       </div>

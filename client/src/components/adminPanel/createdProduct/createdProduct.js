@@ -47,6 +47,11 @@ const CreatedProdComp = (props) => {
             duration: 2,
           }) && props.dispatchDataUpdate(selectedValue);
     }, 1000);
+    setTimeout(() => {
+      let upadateFlag = updateRender === false ? true : false;
+      setupdateRender(upadateFlag);
+    }, 1800);
+    setVisible(false);
     // props.dispatchDataUpdate(selectedValue);
     // setupdateMessage(dataUpdatedMessage)
   };
@@ -55,34 +60,33 @@ const CreatedProdComp = (props) => {
     setVisible(false);
     setupdateRender(upadateFlag);
   };
-  const handleDelete = (item) => {
+  const handleDelete = () => {
     let upadateFlag = updateRender === false ? true : false;
-    // message.loading({ content: "Loading...", key });
-    // setTimeout(() => {
-    //   message.success({ content: "delete successfully!", key, duration: 2 });
-    //   setupdateRender(upadateFlag);
-    // }, 2000);
+    message.loading({ content: "Loading...", key });
+    setTimeout(() => {
+      message.success({ content: "delete successfully!", key, duration: 2 });
       setupdateRender(upadateFlag);
-    props.dispatchDeleteData(item);
+    }, 2000);
+    props.dispatchDeleteData(selectDeleteValue);
     setconfirmModelopen(false);
   };
-  // const showConfirmModel = (item) => {
-  //   setconfirmModelopen(true);
-  //   setselectDeleteValue(item);
-  // };
-  // const handleDeleteCancelModel = () => {
-  //   let upadateFlag = updateRender === false ? true : false;
-  //   setconfirmModelopen(false);
-  //   setupdateRender(upadateFlag);
-  // };
-  // if (props.isloading) {
-  //   return (
-  //     <div>
-  //       {" "}
-  //       <Spin className={classes.spinnerAdmin} size="large" tip="Loading..." />
-  //     </div>
-  //   );
-  // } else {
+  const showConfirmModel = (item) => {
+    setconfirmModelopen(true);
+    setselectDeleteValue(item);
+  };
+  const handleDeleteCancelModel = () => {
+    let upadateFlag = updateRender === false ? true : false;
+    setconfirmModelopen(false);
+    setupdateRender(upadateFlag);
+  };
+  if (props.isloading) {
+    return (
+      <div>
+        {" "}
+        <Spin className={classes.spinnerAdmin} size="large" tip="Loading..." />
+      </div>
+    );
+  } else {
     return (
       <div>
         <div className={classes.prodDivHeading}>
@@ -112,8 +116,8 @@ const CreatedProdComp = (props) => {
                       <button
                         className={classes.dellButton}
                         onClick={() => {
-                          handleDelete(item);
-                          // showConfirmModel(item);
+                          // handleDelete(item);
+                          showConfirmModel(item);
                         }}
                       >
                         dell
@@ -129,7 +133,7 @@ const CreatedProdComp = (props) => {
                 </Card>
               </div>
             );
-        })}
+          })}
           <div>
             <Link to="/admin/form">
               <button className={classes.createPButton}>
@@ -144,15 +148,15 @@ const CreatedProdComp = (props) => {
             selectedValue={selectedValue}
             handleCancel={handleCancel}
           />
-          {/* <ConfirmDelete
+          <ConfirmDelete
             confirmModelopen={confirmModelopen}
             handleDeleteCancelModel={handleDeleteCancelModel}
             handleDelete={handleDelete}
-          /> */}
+          />
         </div>
       </div>
     );
-  // }
+  }
 };
 const mapDispatchToProps = (dispatch) => {
   return {
