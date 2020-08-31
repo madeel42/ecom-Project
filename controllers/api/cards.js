@@ -91,7 +91,7 @@ exports.deleteCardsData = (req, res) => {
     if (err) {
       return res.json({ error: err });
     } else {
-      res.json({ message: "data deleted successfully" });
+      res.json({ data, message: "data deleted successfully" });
     }
   });
 };

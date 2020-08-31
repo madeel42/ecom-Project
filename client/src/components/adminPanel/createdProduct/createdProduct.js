@@ -14,8 +14,6 @@ const { Meta } = Card;
 const CreatedProdComp = (props) => {
   const [visible, setVisible] = useState(false);
   const [confirmModelopen, setconfirmModelopen] = useState(false);
-  // const [deleteRender, setdeleteRender] = useState(false);
-  const [updateRender, setupdateRender] = useState(false);
   const [selectedValue, setselectedValue] = useState({
     Pname: "",
     price: null,
@@ -26,10 +24,9 @@ const CreatedProdComp = (props) => {
   const [selectDeleteValue, setselectDeleteValue] = useState();
   useEffect(() => {
     props.dispatchData();
-  }, [updateRender]);
+  }, []);
   const showModal = (item) => {
     setVisible(true);
-    // console.log(item);
     setselectedValue(item);
   };
   const updateDataSubmit = () => {
@@ -47,26 +44,16 @@ const CreatedProdComp = (props) => {
             duration: 2,
           }) && props.dispatchDataUpdate(selectedValue);
     }, 1000);
-    setTimeout(() => {
-      let upadateFlag = updateRender === false ? true : false;
-      setupdateRender(upadateFlag);
-    }, 1800);
     setVisible(false);
-    // props.dispatchDataUpdate(selectedValue);
-    // setupdateMessage(dataUpdatedMessage)
   };
   const handleCancel = () => {
-    let upadateFlag = updateRender === false ? true : false;
     setVisible(false);
-    setupdateRender(upadateFlag);
   };
   const handleDelete = () => {
-    let upadateFlag = updateRender === false ? true : false;
     message.loading({ content: "Loading...", key });
     setTimeout(() => {
       message.success({ content: "delete successfully!", key, duration: 2 });
-      setupdateRender(upadateFlag);
-    }, 2000);
+    }, 1000);
     props.dispatchDeleteData(selectDeleteValue);
     setconfirmModelopen(false);
   };
@@ -75,9 +62,7 @@ const CreatedProdComp = (props) => {
     setselectDeleteValue(item);
   };
   const handleDeleteCancelModel = () => {
-    let upadateFlag = updateRender === false ? true : false;
     setconfirmModelopen(false);
-    setupdateRender(upadateFlag);
   };
   if (props.isloading) {
     return (
@@ -93,47 +78,57 @@ const CreatedProdComp = (props) => {
           <h1>products created by admin</h1>
         </div>
         <div className={classes.mainCardDiv}>
-          {props.updatedData.map((item, index) => {
-            return (
-              <div className={classes.cardStyle} key={item._id}>
-                <Card
-                  hoverable
-                  className={classes.CardsOriginal}
-                  cover={
-                    <img
-                      alt="example"
-                      className={classes.coverImg}
-                      src={item.file}
-                    />
-                  }
-                >
-                  <div>
-                    <Meta title={item.Pname} description="1pc(s)" />
-                  </div>
-                  <div className={classes.EndDiv}>
-                    <p className={classes.PriceStyle}>{item.price}$</p>
+          {props.updatedData ? (
+            props.updatedData.map((item, index) => {
+              return (
+                <div className={classes.cardStyle} key={item._id}>
+                  <Card
+                    hoverable
+                    className={classes.CardsOriginal}
+                    cover={
+                      <img
+                        alt="example"
+                        className={classes.coverImg}
+                        src={item.file}
+                      />
+                    }
+                  >
                     <div>
-                      <button
-                        className={classes.dellButton}
-                        onClick={() => {
-                          // handleDelete(item);
-                          showConfirmModel(item);
-                        }}
-                      >
-                        dell
-                      </button>
-                      <button
-                        className={classes.updateBtn}
-                        onClick={() => showModal(item)}
-                      >
-                        update
-                      </button>
+                      <Meta title={item.Pname} description="1pc(s)" />
                     </div>
-                  </div>
-                </Card>
-              </div>
-            );
-          })}
+                    <div className={classes.EndDiv}>
+                      <p className={classes.PriceStyle}>{item.price}$</p>
+                      <div>
+                        <button
+                          className={classes.dellButton}
+                          onClick={() => {
+                            // handleDelete(item);
+                            showConfirmModel(item);
+                          }}
+                        >
+                          dell
+                        </button>
+                        <button
+                          className={classes.updateBtn}
+                          onClick={() => showModal(item)}
+                        >
+                          update
+                        </button>
+                      </div>
+                    </div>
+                  </Card>
+                </div>
+              );
+            })
+          ) : (
+            <div>
+              {/* {props.updatedData.error ? (
+                <h1>{props.updatedData.error.message}</h1>
+              ) : (
+                ""
+              )} */}
+            </div>
+          )}
           <div>
             <Link to="/admin/form">
               <button className={classes.createPButton}>

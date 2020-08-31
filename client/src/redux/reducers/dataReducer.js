@@ -6,6 +6,7 @@ let initialData = {
   itemLength: null,
   modelItem: {},
   isloading: false,
+  iscreatedDataload: false,
 };
 
 // console.log(arr)
@@ -120,7 +121,12 @@ const dataReducer = (state = initialData, action) => {
         ...newState,
         modelItem: action.data,
       };
-    case allAction.PRODUCT_CREATED_BY_ADMIN:
+    // case allAction.PRODUCT_CREATED_BY_ADMIN:
+    //   return {
+    //     ...newState,
+    //     data1: newState.data1.push(action.data)
+    //   };
+    case allAction.PRODUCT_GETTING_BY_DATABASE:
       return {
         ...newState,
         data1: action.data,
@@ -129,6 +135,36 @@ const dataReducer = (state = initialData, action) => {
       return {
         ...newState,
         isloading: action.data,
+      };
+    case allAction.FETCH_CREATED_DATA_LOADING:
+      return {
+        ...newState,
+        iscreatedDataload: action.data,
+      };
+    case allAction.FETCH_DATA_UPDATING:
+      return {
+        ...newState,
+        data1: newState.data1.map((item) =>
+          item._id === action.data.data._id
+            ? {
+                ...item,
+                Pname: action.data.data.Pname,
+                counter: action.data.data.counter,
+                description: action.data.data.description,
+                file: action.data.data.file,
+                price: action.data.data.price,
+              }
+            : item
+        ),
+      };
+    case allAction.DELETE_DATA_UPDATEDOM:
+      console.log(action.data);
+      let deletedData = newState.data1.filter((item) => {
+        return item._id !== action.data.data._id;
+      });
+      return {
+        ...newState,
+        data1: deletedData,
       };
   }
   return state;

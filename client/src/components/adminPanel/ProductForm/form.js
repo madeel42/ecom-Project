@@ -8,6 +8,7 @@ import { useState } from "react";
 import { connect } from "react-redux";
 import adminPanelMiddleWare from "../../../redux/middlewares/adminPaneldata/adminProductData";
 import { set } from "lodash";
+import { STATES } from "mongoose";
 const layout = {
   labelCol: {
     span: 5,
@@ -33,16 +34,15 @@ const CPForm = (props) => {
     counter: null,
     description: "",
   });
-  const [rdirect, setrdirect] = useState(false);
+  // const [rdirect, setrdirect] = useState(false);
   const [price, setproductPriceValue] = useState();
   const [cardImage, setcardImage] = useState();
   const handleValueChange = (e) => {
-    console.log(e.target.value);
     setproductValue({ ...productValue, [e.target.name]: e.target.value });
   };
-  const onFinish = (values) => {
-    console.log(values);
-  };
+  // const onFinish = (values) => {
+  //   console.log(values);
+  // };
   const handleSubmit = () => {
     // let data =
     message.loading({ content: "Loading...", key });
@@ -56,18 +56,22 @@ const CPForm = (props) => {
         : message.success({ content: "Saved", key, duration: 2 }) &&
             props.dispatchData({ productValue, price, cardImage });
     }, 1000);
-    setTimeout(()=>{
-      setrdirect(true);
-    },1900)
+    // setTimeout(() => {
+    //   return productValue.Pname == "" ||
+    //     productValue.description == "" ||
+    //     productValue.counter == null ||
+    //     cardImage == null ||
+    //     price == null
+    //     ? setrdirect(false)
+    //     : setrdirect(true);
+    // }, 1900);
   };
-  console.log(rdirect,"rdirectt")
-  console.log(price, "price after save");
   const handleValueChange1 = (e) => {
     console.log(e);
     setproductPriceValue(e);
   };
   const RedirectCom = () => {
-    return rdirect === true ? (
+    return props.iscreatedDataload === true ? (
       <Redirect to="/admin/product" />
     ) : (
       <Redirect to="/admin/form" />
@@ -88,7 +92,7 @@ const CPForm = (props) => {
         <Form
           {...layout}
           name="nest-messages"
-          onFinish={onFinish}
+          // onFinish={onFinish}
           validateMessages={validateMessages}
         >
           <Form.Item
@@ -164,4 +168,9 @@ const mapDispatchToProps = (dispatch) => {
     },
   };
 };
-export default connect(null, mapDispatchToProps)(CPForm);
+const mapStateToProps = (state) => {
+  return {
+    iscreatedDataload: state.dataReducer.iscreatedDataload,
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(CPForm);
