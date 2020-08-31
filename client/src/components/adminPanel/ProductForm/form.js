@@ -71,7 +71,7 @@ const CPForm = (props) => {
     setproductPriceValue(e);
   };
   const RedirectCom = () => {
-    return props.iscreatedDataload === true ? (
+    return props.iscreatedDataload ? (
       <Redirect to="/admin/product" />
     ) : (
       <Redirect to="/admin/form" />
