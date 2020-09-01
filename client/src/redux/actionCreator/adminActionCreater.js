@@ -13,25 +13,25 @@ export const productGettingBydatabase = (data) => {
 };
 export const fetchcCreateDataLoading = (data) => {
   return {
-    type:allAction.FETCH_CREATED_DATA_LOADING,
-    data
-  }
-}
+    type: allAction.FETCH_CREATED_DATA_LOADING,
+    data,
+  };
+};
 export const fetchDataLoading = (data) => {
   return {
-    type:allAction.FETCH_DATA_LOADING,
-    data
-  }
-}
+    type: allAction.FETCH_DATA_LOADING,
+    data,
+  };
+};
 export const fetchDataupdating = (data) => {
   return {
-    type:allAction.FETCH_DATA_UPDATING,
-    data
-  }
-}
+    type: allAction.FETCH_DATA_UPDATING,
+    data,
+  };
+};
 export const fetchDatadeleting = (data) => {
   return {
-    type:allAction.DELETE_DATA_UPDATEDOM,
-    data
-  }
-}
+    type: allAction.DELETE_DATA_UPDATEDOM,
+    data,
+  };
+};

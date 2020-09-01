@@ -1,5 +1,4 @@
 import * as allAction from "../Actions/allActions";
-import { flatMap } from "lodash";
 let initialData = {
   data1: [],
   drawerItem: [],

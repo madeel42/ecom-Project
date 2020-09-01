@@ -45,7 +45,7 @@ const CPForm = (props) => {
   // };
   const handleSubmit = () => {
     // let data =
-    message.loading({ content: "Loading...", key });
+    // message.loading({ content: "Loading...", key });
     // setTimeout(() => {
     //   return
     //     ? message.error({ content: "fill required field", key, duration: 2 })
