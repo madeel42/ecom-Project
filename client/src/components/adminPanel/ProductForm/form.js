@@ -8,7 +8,7 @@ import { useState } from "react";
 import { connect } from "react-redux";
 import adminPanelMiddleWare from "../../../redux/middlewares/adminPaneldata/adminProductData";
 import { set } from "lodash";
-import { STATES } from "mongoose";
+// import { STATES } from "mongoose";
 const layout = {
   labelCol: {
     span: 5,
@@ -46,16 +46,19 @@ const CPForm = (props) => {
   const handleSubmit = () => {
     // let data =
     message.loading({ content: "Loading...", key });
-    setTimeout(() => {
-      return productValue.Pname == "" ||
-        productValue.description == "" ||
-        productValue.counter == null ||
-        cardImage == null ||
-        price == null
-        ? message.error({ content: "fill required field", key, duration: 2 })
-        : message.success({ content: "Saved", key, duration: 2 }) &&
-            props.dispatchData({ productValue, price, cardImage });
-    }, 1000);
+    // setTimeout(() => {
+    //   return
+    //     ? message.error({ content: "fill required field", key, duration: 2 })
+    //     : message.success({ content: "Saved", key, duration: 2 }) &&
+    //         props.dispatchData({ productValue, price, cardImage });
+    // }, 1000);
+    productValue.Pname == "" ||
+    productValue.description == "" ||
+    productValue.counter == null ||
+    cardImage == null ||
+    price == null
+      ? message.error({ content: "fill required field", key, duration: 2 })
+      : props.dispatchData({ productValue, price, cardImage });
     // setTimeout(() => {
     //   return productValue.Pname == "" ||
     //     productValue.description == "" ||
@@ -110,6 +113,7 @@ const CPForm = (props) => {
               name="Pname"
               value={productValue.Pname}
               onChange={handleValueChange}
+              required
             />
           </Form.Item>
           <Form.Item
@@ -119,11 +123,12 @@ const CPForm = (props) => {
               {
                 type: "number",
                 min: 0,
+                required: true,
                 // max: 99,
               },
             ]}
           >
-            <InputNumber value={price} onChange={handleValueChange1} />
+            <InputNumber value={price} required onChange={handleValueChange1} />
           </Form.Item>
           <Form.Item name={["user", "Counter"]} label="counter">
             <Input
@@ -138,10 +143,11 @@ const CPForm = (props) => {
               value={productValue.description}
               name="description"
               onChange={handleValueChange}
+              required
             />
           </Form.Item>
           <Form.Item label="Upload Picture">
-            <input type="file" onChange={handleImageChange} />
+            <input type="file" onChange={handleImageChange} required />
           </Form.Item>
 
           <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>

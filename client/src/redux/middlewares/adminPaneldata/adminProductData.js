@@ -28,7 +28,7 @@ class adminPanelMiddleWare {
           console.log(res);
           isloading = false;
           dispatch(adminActionCreator.fetchcCreateDataLoading(isloading));
-          // dispatch(adminActionCreator.productCreateByAdmin(res));
+          dispatch(adminActionCreator.productCreateByAdmin(res));
         });
     };
   };
