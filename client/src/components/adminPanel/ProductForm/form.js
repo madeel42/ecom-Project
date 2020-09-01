@@ -45,20 +45,23 @@ const CPForm = (props) => {
   // };
   const handleSubmit = () => {
     // let data =
-    // message.loading({ content: "Loading...", key });
+    message.loading({ content: "Loading...", key });
     // setTimeout(() => {
     //   return
     //     ? message.error({ content: "fill required field", key, duration: 2 })
     //     : message.success({ content: "Saved", key, duration: 2 }) &&
     //         props.dispatchData({ productValue, price, cardImage });
     // }, 1000);
-    productValue.Pname == "" ||
-    productValue.description == "" ||
-    productValue.counter == null ||
-    cardImage == null ||
-    price == null
-      ? message.error({ content: "fill required field", key, duration: 2 })
-      : props.dispatchData({ productValue, price, cardImage });
+    setTimeout(() => {
+      return productValue.Pname == "" ||
+        productValue.description == "" ||
+        productValue.counter == null ||
+        cardImage == null ||
+        price == null
+        ? message.error({ content: "fill required field", key, duration: 2 })
+        : message.success({ content: "saved", key, duration: 2 }) &&
+            props.dispatchData({ productValue, price, cardImage });
+    }, 1500);
     // setTimeout(() => {
     //   return productValue.Pname == "" ||
     //     productValue.description == "" ||
