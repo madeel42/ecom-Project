@@ -9,9 +9,9 @@ class adminPanelMiddleWare {
       dispatch(adminActionCreator.fetchcCreateDataLoading(isloading));
       let formDAta = new FormData();
       formDAta.append("file", data.cardImage);
-      formDAta.append("Pname", data.productValue.Pname);
-      formDAta.append("counter", data.productValue.counter);
-      formDAta.append("description", data.productValue.description);
+      formDAta.append("Pname", data.Pname);
+      formDAta.append("counter", data.counter);
+      formDAta.append("description", data.description);
       formDAta.append("price", data.price);
       fetch("/createData", {
         method: "POST",
