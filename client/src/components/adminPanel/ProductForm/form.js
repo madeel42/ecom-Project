@@ -45,6 +45,7 @@ const CPForm = (props) => {
   // };
   const handleSubmit = (e) => {
     e.preventDefault();
+    message.loading({ content: "creating...", key });
     let Pname = productValue.Pname;
     let description = productValue.description;
     let counter = productValue.counter;
@@ -69,13 +70,13 @@ const CPForm = (props) => {
     console.log(e);
     setproductPriceValue(e);
   };
-  const RedirectCom = () => {
-    return props.iscreatedDataload ? (
-      <Redirect to="/admin/product" />
-    ) : (
-      <Redirect to="/admin/form" />
-    );
-  };
+  // const RedirectCom = () => {
+  //   return props.iscreatedDataload ? (
+  //     <Redirect to="/admin/product" />
+  //   ) : (
+  //     <Redirect to="/admin/form" />
+  //   );
+  // };
   const handleImageChange = (e) => {
     console.log(e.target.files[0]);
     setcardImage(e.target.files[0]);
@@ -83,7 +84,7 @@ const CPForm = (props) => {
   console.log(productValue);
   return (
     <div>
-      {RedirectCom()}{" "}
+      {/* {RedirectCom()}{" "} */}
       <div className={classes.formNavDiv}>
         <h1 className={classes.heading}>Create product</h1>
       </div>
