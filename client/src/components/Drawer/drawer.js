@@ -5,6 +5,7 @@ import "./drawerCustom.css";
 import { ReactComponent as Bag } from "./assets/bag.svg";
 import { connect } from "react-redux";
 import midddleWare from "../../redux/middlewares/middleWare";
+import { Link } from "react-router-dom";
 const DrawerComponent = (props) => {
   const {
     draweritem,
@@ -135,12 +136,14 @@ const DrawerComponent = (props) => {
               Do you have a voucher?
             </button>
           </span>
-          <button className={classes.checkOutbutton}>
-            <span className={classes.checkoutText}> Checkout</span>{" "}
-            <span className={classes.checkoutPrice}>
-              {total}${/* {itemPrice * itemCounter}$ */}
-            </span>
-          </button>
+          <Link to="/user/detailsForms">
+            <button className={classes.checkOutbutton}>
+              <span className={classes.checkoutText}> Checkout</span>{" "}
+              <span className={classes.checkoutPrice}>
+                {total}${/* {itemPrice * itemCounter}$ */}
+              </span>
+            </button>
+          </Link>
           {/* </span> */}
         </div>
       </Drawer>

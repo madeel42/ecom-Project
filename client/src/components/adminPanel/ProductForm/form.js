@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./form.module.css";
 import "antd/dist/antd.css";
 import "./customAnt.css";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Form, Input, InputNumber, Button, message } from "antd";
 import { useState } from "react";
 import { connect } from "react-redux";

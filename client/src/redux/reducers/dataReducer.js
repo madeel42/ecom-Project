@@ -120,15 +120,15 @@ const dataReducer = (state = initialData, action) => {
         ...newState,
         modelItem: action.data,
       };
-    // case allAction.PRODUCT_CREATED_BY_ADMIN:
-    //   return {
-    //     ...newState,
-    //     data1: action.data != null ? newState.data1.push(action.data) : ""
-    //   };
     case allAction.PRODUCT_GETTING_BY_DATABASE:
       return {
         ...newState,
         data1: action.data,
+      };
+    case allAction.PRODUCT_CREATED_BY_ADMIN:
+      return {
+        ...newState,
+        data1: [...newState.data1, action.data],
       };
     case allAction.FETCH_DATA_LOADING:
       return {
