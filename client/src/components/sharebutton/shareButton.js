@@ -47,7 +47,7 @@ export const ShareButton = () => {
                 <div>
                     <PinterestShareButton
                         url={`https://facebook.com/sharer/sharer.php?u=${encoded}`}
-                        media={'https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fb6%2FImage_created_with_a_mobile_phone.png%2F1200px-Image_created_with_a_mobile_phone.png&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FImage&tbnid=gxFxsvFBmxeZ9M&vet=12ahUKEwim4-Py_e7vAhWp2OAKHdQjA30QMygBegUIARDVAQ..i&docid=0JWe7yDOKrVFAM&w=1200&h=900&q=image&ved=2ahUKEwim4-Py_e7vAhWp2OAKHdQjA30QMygBegUIARDVAQ'}
+                        media={'https://tayaba.org/wp-content/uploads/2020/05/4E0744CD-793A-4EF8-B550B54F7F2C4406_source.jpg'}
                         description={'title'}
                         className="Demo__some-network__share-button"
                     >
