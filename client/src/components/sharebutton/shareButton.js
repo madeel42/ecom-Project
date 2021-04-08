@@ -28,7 +28,7 @@ export const ShareButton = () => {
                 {/* <ShareList> */}
                 <div className="mr-2">
                     <FacebookShareButton
-                        url={shareUrl}
+                        url={`https://facebook.com/sharer/sharer.php?u=${encoded}`}
                         quote={'title facebook'}
                         className="Demo__some-network__share-button"
                     >
@@ -38,6 +38,7 @@ export const ShareButton = () => {
                 <div className="mr-2">
                     <LinkedinShareButton
                         url={shareUrl}
+                        data-url="https://tayaba.org/wp-content/uploads/2020/05/4E0744CD-793A-4EF8-B550B54F7F2C4406_source.jpg"
                         title={'titleLinkedIn'}
                         className="Demo__some-network__share-button"
                     >
@@ -46,7 +47,7 @@ export const ShareButton = () => {
                 </div>
                 <div>
                     <PinterestShareButton
-                        url={`https://facebook.com/sharer/sharer.php?u=${encoded}`}
+                        url={shareUrl}
                         media={'https://tayaba.org/wp-content/uploads/2020/05/4E0744CD-793A-4EF8-B550B54F7F2C4406_source.jpg'}
                         description={'title'}
                         className="Demo__some-network__share-button"
