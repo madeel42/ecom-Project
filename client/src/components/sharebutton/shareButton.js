@@ -37,8 +37,7 @@ export const ShareButton = () => {
                 </div>
                 <div className="mr-2">
                     <LinkedinShareButton
-                        url={shareUrl}
-                        data-url="https://tayaba.org/wp-content/uploads/2020/05/4E0744CD-793A-4EF8-B550B54F7F2C4406_source.jpg"
+                        url={'https://tayaba.org/wp-content/uploads/2020/05/4E0744CD-793A-4EF8-B550B54F7F2C4406_source.jpg'}
                         title={'titleLinkedIn'}
                         className="Demo__some-network__share-button"
                     >
