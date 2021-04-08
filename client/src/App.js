@@ -10,6 +10,7 @@ import CPForm from "./components/adminPanel/ProductForm/form";
 import CreatedProdComp from "./components/adminPanel/createdProduct/createdProduct";
 import UserDetailsForm from './components/userDetails/userDetailsForm'
 import { PersistGate } from "redux-persist/integration/react";
+import {ShareButton} from './components/sharebutton/shareButton'
 const App = () => {
   return (
     <Provider store={store}>
@@ -18,6 +19,7 @@ const App = () => {
           <PersistGate persistor={persistor}>
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route exact path="/share" component={ShareButton} />
               <Route path="/user/detailsForms" component={UserDetailsForm}/>
               <Route path="/admin/form" component={CPForm} />
               <Route path="/admin/product" component={CreatedProdComp} />
