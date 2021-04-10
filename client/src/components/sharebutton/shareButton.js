@@ -28,7 +28,7 @@ export const ShareButton = () => {
                 {/* <ShareList> */}
                 <div className="mr-2">
                     <FacebookShareButton
-                        url={`https://facebook.com/sharer/sharer.php?u=${encoded}`}
+                        url={shareUrl}
                         quote={'title facebook'}
                         className="Demo__some-network__share-button"
                     >
